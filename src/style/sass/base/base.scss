@@ -1,0 +1,32 @@
+@use "../abstract/abstrarct.scss" as size;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Montserrat", serif;
+  background-color: var(--body-background);
+}
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  @include size.breakpoint("xs") {
+    padding: 0 20px;
+  }
+  @include size.breakpoint("sm") {
+    padding: 0 5px;
+  }
+  @include size.breakpoint("md") {
+    padding: 0 20px;
+  }
+  @include size.breakpoint("lg") {
+    padding: 0 20px;
+  }
+}
+
+h1 {
+  color: var(--text-black);
+}

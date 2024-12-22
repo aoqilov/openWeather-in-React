@@ -1,0 +1,88 @@
+@use "../abstract/abstrarct.scss" as main;
+
+.header {
+  margin-top: 20px;
+  min-height: 65px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .logo-box {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    .logo-img {
+      width: 65px;
+      height: 65px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .logo-text {
+      font-size: 25px;
+      line-height: 31px;
+      color: var(--sky-blue);
+    }
+  }
+  .search-box {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    .search-input {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 200px;
+      height: 37px;
+      span {
+        display: none;
+        &.active {
+          padding: 7px 10px;
+          border-radius: 10px;
+          background: rgba(71, 148, 255, 0.438);
+        }
+      }
+      input {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        background: rgba(71, 147, 255, 0.2);
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--text-black);
+        &::placeholder {
+          font-size: 16px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+// responsive
+@include main.breakpoint("xs") {
+  .header {
+    flex-direction: column;
+    gap: 15px;
+    .logo-box {
+      .logo-text {
+        font-size: 22px;
+      }
+      .logo-img {
+        width: 45px;
+        height: 45px;
+      }
+    }
+    .search-box {
+      .search-input {
+        width: 220px;
+        height: 37px;
+      }
+    }
+  }
+}

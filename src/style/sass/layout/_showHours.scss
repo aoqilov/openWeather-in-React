@@ -1,0 +1,102 @@
+@use "../abstract/abstrarct.scss" as resize;
+
+.hours {
+  .btn-hours {
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+    button {
+      height: 35px;
+      border-radius: 5px;
+      box-shadow: 2px 5px 25px -3px #4794ff62;
+      background: #ffffff69;
+      color: black;
+      padding: 0 15px;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 22px;
+      border: 1px solid #4793ff;
+      cursor: pointer;
+      &.active {
+        background-color: #4793ff;
+        color: white;
+      }
+    }
+  }
+  .hours-box {
+    background-color: #24334969;
+    padding: 10px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(8, 120px);
+    justify-content: center;
+    gap: 20px;
+    display: none;
+    &.show {
+      display: grid;
+    }
+    .card {
+      background-color: var(--body-background);
+      text-align: center;
+      display: flex;
+      gap: 5px;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      border-radius: 10px;
+      box-shadow: 2px 5px 25px -3px rgba(180, 180, 180, 0.25);
+      padding: 5px;
+
+      &-img {
+        display: flex;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      &-time {
+        font-size: 18px;
+        color: var(--text-black);
+      }
+      &-coment {
+        color: var(--text-gray);
+        font-weight: 600;
+      }
+      &-gradus {
+        font-size: 19px;
+        color: var(--text-black);
+      }
+    }
+  }
+}
+@include resize.breakpoint("lg") {
+  .hours {
+    .hours-box {
+      grid-template-columns: repeat(4, 200px);
+    }
+  }
+}
+@include resize.breakpoint("md") {
+  .hours {
+    .hours-box {
+      grid-template-columns: repeat(4, 150px);
+    }
+  }
+}
+@include resize.breakpoint("sm") {
+  .hours {
+    .hours-box {
+      grid-template-columns: repeat(2, 250px);
+    }
+  }
+}
+@include resize.breakpoint("xs") {
+  .hours {
+    .hours-box {
+      grid-template-columns: repeat(1, 100%);
+    }
+  }
+}

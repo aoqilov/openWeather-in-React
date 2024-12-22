@@ -1,0 +1,67 @@
+@use "../abstract//abstrarct.scss" as resize;
+
+.footer {
+  margin-top: 50px;
+  .footer-btn {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    button {
+      width: 144px;
+      height: 35px;
+      border-radius: 5px;
+      box-shadow: 2px 5px 25px -3px rgba(180, 180, 180, 0.25);
+      background: #fff;
+      color: #000;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 22px;
+      border: none;
+      cursor: pointer;
+      &.active {
+        color: white;
+        background-color: rgb(71, 147, 255);
+      }
+    }
+  }
+  .week-box {
+    margin-top: 7px;
+    border-radius: 0px 0px 20px 20px;
+    box-shadow: 2px 5px 25px -3px rgba(180, 180, 180, 0.25);
+    background: var(--body-background);
+    padding: 20px;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@include resize.breakpoint("lg") {
+  .footer {
+    .week-box {
+      grid-template-columns: 30% 30% 30%;
+    }
+  }
+}
+@include resize.breakpoint("md") {
+  .footer {
+    .week-box {
+      grid-template-columns: 30% 30% 30%;
+    }
+  }
+}
+@include resize.breakpoint("sm") {
+  .footer {
+    .week-box {
+      grid-template-columns: 50% 50%;
+    }
+  }
+}
+@include resize.breakpoint("xs") {
+  .footer {
+    .week-box {
+      grid-template-columns: 100%;
+    }
+  }
+}
