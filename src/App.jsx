@@ -18,7 +18,7 @@ const App = () => {
     SetError(null); // Xatolikni tozalash
     try {
       const response = await axios.get(
-        `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}&units=metric`
+        `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}&units=metric&lang=ru`
       );
       setForecast(response.data); // Ma'lumotni saqlash
     } catch (err) {

@@ -16,7 +16,7 @@ const ShowHours = ({ forecast }) => {
     <div className="hours">
       <div className="btn-hours">
         <button className={isOpen ? "active" : ""} onClick={showModal}>
-          Open each 3hours daily
+          Открыто каждые 3 часа ежедневно
         </button>
       </div>
       <div className={`hours-box ${isOpen ? "show" : ""}`}>
